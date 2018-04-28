@@ -1,0 +1,49 @@
+from flask import Flask #importando o Flask
+app = Flask(__name__)
+
+'''
+get ->  	Pega dados
+post -> 	Envia dados para servidor(criar algo que n existe)
+put ->  	modifica algo que ja existe
+delete -> 	Apaga o deleta dados
+
+CRUD
+	-Create
+	-Read
+	-Update
+	-Delete
+
+FINALIZAR SERVIDOR FLASK NO CMD
+	taskkill /F /IM python.exe
+'''
+
+@app.route('/lista', methods=['POST']) #Metodo
+def criar(): #Responsavel por Criar
+	return "CRIAR" #Retorna uma string
+
+
+@app.route('/lista', methods=['GET'])
+def ler():#Responsavel por Ler
+	return "LER"
+
+
+@app.route('/lista', methods=['PUT'])
+def atualizar():#Responsavel por Atualizar
+	return "ATUALIZAR"
+
+
+@app.route('/lista', methods=['DELETE'])
+def deleta():#Responsavel por Deletar
+	return "DELETAR"
+
+if __name__ == '__main__':
+	app.run()
+	app.stop()
+
+'''ERRORS
+	200 ok
+	4 erro na requisição
+	500 erro no servidor
+'''
+
+
